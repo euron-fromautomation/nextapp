@@ -1,65 +1,49 @@
 "use client";
 
 import Image from "next/image";
-import { 
-  NavigationMenu, 
-  NavigationMenuList, 
-  NavigationMenuItem, 
-  NavigationMenuLink 
-} from "@/components/ui/navigation-menu";
+import Link from "next/link";
+import { getProviders } from "../lib/utils"; // import utils
 
 export default function Home() {
+  const providers = getProviders(); // merr të dhënat
+  console.log(providers); // shiko në console
+
   return (
-    <div className="font-sans min-h-screen bg-gray-50 dark:bg-gray-900">
-      
-      {/* Full-width navbar */}
-      <header className="w-full bg-white dark:bg-gray-800 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-3">
-          <NavigationMenu>
-            <NavigationMenuList className="flex gap-8 justify-center">
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/"
-                  className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium"
-                >
-                  Home
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/about"
-                  className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium"
-                >
-                  About
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/contact"
-                  className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium"
-                >
-                  Contact
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-      </header>
-
-      {/* Hero content */}
-      <main className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-       
-
-        {/* Extra section */}
-        <section className="mt-8 text-center px-6">
-          <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-            Welcome to our site!
+    <div className="relative w-full min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Hero Section */}
+      <div className="relative w-full h-[500px] sm:h-screen">
+        <Image
+          src="/images/hero.jpg"
+          alt="Hero background"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-left text-white bg-black/50 px-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-left">
+            Compare GLP-1 <br/> Providers in the UK
           </h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300">
-            Explore our products and learn more about us.
-          </p>
-        </section>
-      </main>
+          <Link
+            href="/providers"
+            className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors"
+          >
+            View Providers
+          </Link>
+        </div>
+      </div>
+
+      {/* Optional: preview e providers në Home */}
+      <section className="max-w-5xl mx-auto mt-12 px-6">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+          Preview Providers
+        </h2>
+        <ul className="space-y-2">
+          {providers.map((provider) => (
+            <li key={provider.name} className="text-gray-800 dark:text-gray-200">
+              {provider.name} – Mounjaro: £{provider.mounjaro_price}, Wegovy: £{provider.wegovy_price}
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }

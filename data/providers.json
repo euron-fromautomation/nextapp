@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Numan",
+    "mounjaro_price": 195,
+    "wegovy_price": 180,
+    "link": "https://numan.com",
+    "rating": 4.8,
+    "cqc_status": "Approved"
+  },
+  {
+    "name": "Juniper",
+    "mounjaro_price": 210,
+    "wegovy_price": 190,
+    "link": "https://juniper.com",
+    "rating": 4.6,
+    "cqc_status": "Approved"
+  }
+]

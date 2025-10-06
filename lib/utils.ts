@@ -1,6 +1,6 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+// lib/utils.ts
+import providersData from "../data/providers.json";
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
+export const getProviders = () => {
+  return providersData;
+};
