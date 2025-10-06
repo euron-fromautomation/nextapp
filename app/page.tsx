@@ -2,11 +2,26 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { getProviders } from "../lib/utils"; // import utils
+import { getProviders } from "../lib/utils"; 
 
 export default function Home() {
-  const providers = getProviders(); // merr të dhënat
-  console.log(providers); // shiko në console
+  const providers = getProviders(); 
+  console.log(providers); 
+
+  const features = [
+    {
+      title: "Compare Prices",
+      description: "Find the best deals for GLP-1 medications across UK providers.",
+      image: "/images/comparePrices.jpg",
+      link: "/providers",
+    },
+    {
+      title: "Read Insights",
+      description: "Stay informed with the latest news and medical advice on GLP-1s.",
+      image: "/images/insights.avif",
+      link: "/providers", // Të gjitha shkojnë te /providers
+    },
+  ];
 
   return (
     <div className="relative w-full min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -18,31 +33,49 @@ export default function Home() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-left text-white bg-black/50 px-6">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-left">
-            Compare GLP-1 <br/> Providers in the UK
+        <div className="absolute inset-0 flex flex-col justify-center items-start bg-black/40 px-6 sm:px-12 sm:pl-24">
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6 max-w-lg leading-tight">
+            Compare GLP-1 <br /> Providers in the UK
           </h1>
           <Link
             href="/providers"
-            className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-all"
           >
             View Providers
           </Link>
         </div>
       </div>
 
-      {/* Optional: preview e providers në Home */}
-      <section className="max-w-5xl mx-auto mt-12 px-6">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
-          Preview Providers
-        </h2>
-        <ul className="space-y-2">
-          {providers.map((provider) => (
-            <li key={provider.name} className="text-gray-800 dark:text-gray-200">
-              {provider.name} – Mounjaro: £{provider.mounjaro_price}, Wegovy: £{provider.wegovy_price}
-            </li>
-          ))}
-        </ul>
+      {/* Features Section */}
+      <section className="max-w-6xl mx-auto mt-16 px-6 flex flex-wrap justify-center gap-8">
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className="group relative block rounded-2xl overflow-hidden shadow-lg cursor-pointer w-64 md:w-72"
+          >
+            {/* Feature Image */}
+            <div className="relative w-full h-96">
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{ objectPosition: '85% center' }} 
+              />
+              {/* Overlay me gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                <h3 className="text-2xl font-bold text-white mb-1">{feature.title}</h3>
+                <p className="text-white/90 text-sm mb-3">{feature.description}</p>
+                <Link
+                  href={feature.link}
+                  className="text-blue-400 hover:text-blue-500 font-semibold text-sm transition-colors"
+                >
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
       </section>
     </div>
   );
