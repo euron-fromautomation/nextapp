@@ -11,7 +11,7 @@ export default function Home() {
     {
       title: "Compare Prices",
       description: "Find the best deals for GLP-1 medications across UK providers.",
-      image: "/images/compareprice.jpg",
+      image: "/images/comparePrices.jpg",
       link: "/providers",
     },
     {
