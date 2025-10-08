@@ -9,7 +9,7 @@ This is a fully functional **Next.js 14** web application demonstrating modern f
 - Modern **gradient backgrounds**, hover effects, and consistent spacing for better UX.
 - Overlay sections with gradient backgrounds for improved text readability.
 
-### :brain: What I Learned
+### :brain: What we Learned
 - Structuring a **Next.js App Router** project efficiently.
 - Creating reusable components with **shadcn/ui** and **TailwindCSS**.
 - Implementing **dynamic tables** with search, filter, and sort.
