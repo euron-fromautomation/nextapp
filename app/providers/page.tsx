@@ -67,7 +67,7 @@ export default function ProvidersPage() {
       : "bg-gray-400 text-white";
 
   return (
-    <main className="min-h-screen py-6 px-4 sm:px-8 lg:px-24 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <main className="min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-white py-6 px-4 sm:px-8 lg:px-24 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100 tracking-tight">
         GLP-1 Providers
       </h1>
