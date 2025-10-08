@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Numan",
+    "mounjaro_price": 195,
+    "wegovy_price": 180,
+    "link": "https://numan.com",
+    "rating": 4.8,
+    "cqc_status": "Approved"
+  },
+  {
+    "name": "Juniper",
+    "mounjaro_price": 210,
+    "wegovy_price": 190,
+    "link": "https://juniper.com",
+    "rating": 4.6,
+    "cqc_status": "Approved"
+  },
+  {
+    "name": "HealthFirst",
+    "mounjaro_price": 200,
+    "wegovy_price": 175,
+    "link": "https://healthfirst.com",
+    "rating": 4.4,
+    "cqc_status": "Pending"
+  },
+  {
+    "name": "SlimWell",
+    "mounjaro_price": 185,
+    "wegovy_price": 170,
+    "link": "https://slimwell.com",
+    "rating": 4.7,
+    "cqc_status": "Approved"
+  }
+]
